@@ -84,7 +84,24 @@ html {
     text-align: center;
     margin: 0 0.5rem;
   }
-
+ 
 p,h4{
-  color: aliceblue;
+  color:black;
+  font-size: 25px;
+  text-align: center;
+}
+
+.report{
+  /* margin-top: 50px; */
+}
+
+#ans{
+  background-color: white;
+  position: absolute;
+  color: white;
+  height: 400px;
+  width: 250px;
+  top:100px;
+  left: 950px;
+  border-radius: 15px;
 }

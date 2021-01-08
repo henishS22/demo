@@ -1,8 +1,8 @@
 // const chosenMaxLife = 100;
 var chosenMaxLife;
 let attackValuePlayer = 10;
-let strongAttack = 20;
-let attackValueMonster = 17;
+let strongAttack = 30;
+let attackValueMonster = 15;
 var totalCount = 0;
 var userWinCount = 0;
 var monsterWinCount = 0;
@@ -15,13 +15,28 @@ const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
 var battleLog = [];
-var userEnteredHealth = prompt("Enter Max Health for Game ","100");
-chosenMaxLife = parseInt(userEnteredHealth);
 
-if(isNaN(chosenMaxLife) || chosenMaxLife<=0)
-{
-    chosenMaxLife = 100;
+function getMaxLifeValue(){
+    var userEnteredHealth = prompt("Enter Max Health for Game ","100");
+    chosenMaxLife = parseInt(userEnteredHealth);
+
+    if(isNaN(chosenMaxLife) || chosenMaxLife<=0)
+    {
+        throw 'You Entered something Wrong. so, Default value is 100';
+    }
+    return chosenMaxLife;
 }
+
+
+try{
+    chosenMaxLife = getMaxLifeValue();
+    console.log(chosenMaxLife);
+} catch(error){
+    alert(error);
+    chosenMaxLife = 100;
+    // console.log(chosenMaxLife);
+}
+
 
 var currPlayerhealth = chosenMaxLife;
 var currMonsterhealth = chosenMaxLife;
@@ -35,11 +50,14 @@ function reset()
     // console.log(totalCount);
     // console.log(userWinCount);
     // console.log(monsterWinCount);
+    
     currPlayerhealth = chosenMaxLife;
     currMonsterhealth = chosenMaxLife;
     totalGame.innerHTML = totalCount;
     winGame.innerHTML = userWinCount;
     lostGame.innerHTML = monsterWinCount;
+    if(bonusCount == 0){bonusCount = bonusCount+1;}
+    bonus.innerHTML = bonusCount;
     resetGame(chosenMaxLife);
 }
 
@@ -120,7 +138,7 @@ function healHealth(){
             currPlayerhealth = chosenMaxLife;
             playerHealthBar.value = currPlayerhealth;
             attackValuePlayer = 5;
-            strongAttack = 10;
+            strongAttack = 12;
             bonusCount = bonusCount-1; 
             bonus.innerHTML = bonusCount;   
         }
