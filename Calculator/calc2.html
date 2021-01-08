@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/calc.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#sci-show').click(function() {
+            $('.sci-btn-div').fadeToggle("slide");
+            $('.btn-div').hide();
+            });
+
+            $('#sci-hide').click(function() {
+            $('.btn-div').toggle("slide");
+            $('.sci-btn-div').hide();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h2>C A L C U L A T O R</h2>
+        </div>
+    </header>
+    <section class="sec1">
+        <input type="text" name="digit" id="user-input"><br>
+        
+        <br>
+        <div class="btn-div" id="btn-id">
+            <button type="button" id="clear" onclick="clr()" style="background-color: orangered;color: black;"> C </button>
+            <button type="button" id="clear" onclick="back()" style="background-color: orangered;color: black;"> &larr; </button>
+            <button type="button" id="3" onclick="show('%')" style="background-color: orangered;color: black;"> % </button>
+            <button type="button" id="division" onclick="show('/')" style="background-color: orangered;color: black;"> / </button><br><br>
+
+            <button type="button" id="1" onclick="show('7')"> 7 </button>
+            <button type="button" id="2" onclick="show('8')"> 8 </button>
+            <button type="button" id="3" onclick="show('9')"> 9 </button>
+            <button type="button" id="mul" onclick="show('*')" style="background-color: orangered;color: black;"> * </button><br><br>
+
+            <button type="button" id="1" onclick="show('4')"> 4 </button>
+            <button type="button" id="2" onclick="show('5')"> 5 </button>
+            <button type="button" id="3" onclick="show('6')"> 6 </button>
+            <button type="button" id="minus" onclick="show('-')" style="background-color: orangered;color: black;"> - </button><br><br>
+
+
+            <button type="button" id="1" onclick="show('1')"> 1 </button>
+            <button type="button" id="2" onclick="show('2')"> 2 </button>
+            <button type="button" id="3" onclick="show('3')"> 3 </button>
+            <button type="button" id="plus" onclick="show('+')" style="background-color: orangered;color: black;"> + </button><br><br>
+
+            <button type="button" id="sci-show" style="background-color: orangered;color: black;"> S </button>
+            <button type="button" id="2" onclick="show('0')"> 0 </button>
+            <button type="button" id="1" onclick="show('.')"> . </button>
+            <button type="button" id="result" class="result" onclick="ans()" style="background-color:aquamarine;color:black;"> = </button>
+        </div>
+        
+        <!-- For scientific calc -->
+        <div class="sci-btn-div" id="sci-btn-id">
+            <button type="button" id="lg" onclick="show('lg')"> lg </button>
+            <button type="button" id="1" onclick="show('rad')">rad</button>
+            <button type="button" id="1" onclick="show('sin')"> sin </button>
+            <button type="button" id="1" onclick="show('cos')"> cos </button>
+            <button type="button" id="1" onclick="show('tan')"> tan </button><br><br>
+
+            <button type="button" id="1" onclick="show('x pow y')"> x<sup>y</sup> </button>
+            <button type="button" id="clear" onclick="clr()" style="background-color: orangered;color: black;"> C </button>
+            <button type="button" id="clear" onclick="back()" style="background-color: orangered;color: black;"> &larr; </button>
+            <button type="button" id="3" onclick="show('%')" style="background-color: orangered;color: black;"> % </button>
+            <button type="button" id="division" onclick="show('/')" style="background-color: orangered;color: black;"> / </button><br><br>
+
+            <button type="button" id="1" onclick="show('root x')"> &radic; </button>
+            <button type="button" id="1" onclick="show('7')"> 7 </button>
+            <button type="button" id="2" onclick="show('8')"> 8 </button>
+            <button type="button" id="3" onclick="show('9')"> 9 </button>
+            <button type="button" id="mul" onclick="show('*')" style="background-color: orangered;color: black;"> * </button><br><br>
+
+            <button type="button" id="1" onclick="show('x!')"> x! </button>
+            <button type="button" id="1" onclick="show('4')"> 4 </button>
+            <button type="button" id="2" onclick="show('5')"> 5 </button>
+            <button type="button" id="3" onclick="show('6')"> 6 </button>
+            <button type="button" id="minus" onclick="show('-')" style="background-color: orangered;color: black;"> - </button><br><br>
+
+            <button type="button" id="1" onclick="show('&Pi;')"> &Pi; </button>
+            <button type="button" id="1" onclick="show('1')"> 1 </button>
+            <button type="button" id="2" onclick="show('2')"> 2 </button>
+            <button type="button" id="3" onclick="show('3')"> 3 </button>
+            <button type="button" id="plus" onclick="show('+')" style="background-color: orangered;color: black;"> + </button><br><br>
+
+            
+            <button type="button" id="sci-hide" style="background-color: orangered;color: black;"> S </button>
+            <button type="button" id="1" onclick="show('e')"> e </button>
+            <button type="button" id="2" onclick="show('0')"> 0 </button>
+            <button type="button" id="1" onclick="show('.')"> . </button>
+            <button type="button" id="result" class="result" onclick="ans()" style="background-color:aquamarine;color:black;"> = </button>
+            
+
+            
+        </div>
+
+    </section>
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
