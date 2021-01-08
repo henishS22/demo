@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/calc.css" />
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h2>Calculator</h2>
+        </div>
+    </header>
+    <section class="sec1">
+        <input type="text" name="digit" id="user-input"><br>
+        
+        <br>
+        <div class="btn-div">
+            <button type="button" id="1" onclick="disp('1')"> 1 </button>
+            <button type="button" id="2" onclick="disp('2')"> 2 </button>
+            <button type="button" id="3" onclick="disp('3')"> 3 </button>
+            <button type="button" id="plus" onclick="disp('+')"> + </button><br><br>
+
+            <button type="button" id="1" onclick="disp('4')"> 4 </button>
+            <button type="button" id="2" onclick="disp('5')"> 5 </button>
+            <button type="button" id="3" onclick="disp('6')"> 6 </button>
+            <button type="button" id="minus" onclick="disp('-')"> - </button><br><br>
+
+            <button type="button" id="1" onclick="disp('7')"> 7 </button>
+            <button type="button" id="2" onclick="disp('8')"> 8 </button>
+            <button type="button" id="3" onclick="disp('9')"> 9 </button>
+            <button type="button" id="mul" onclick="disp('*')"> * </button><br><br>
+            
+            <button type="button" id="2" onclick="disp('0')"> 0 </button>
+            <button type="button" id="result" class="result" onclick="res()"> = </button>
+            <button type="button" id="clear" onclick="clr()"> C </button>        
+            <button type="button" id="division" onclick="disp('/')"> / </button><br><br>
+            
+                
+        </div>
+        
+    </section>
+    <script src="scripts/calc.js"></script>
+</body>
+</html>
